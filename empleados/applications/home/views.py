@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
-from django.views.generic import ListView
+from django.views.generic import TemplateView, ListView, CreateView
+
+from .models import Home
 
 
 # Create your views here.
@@ -19,3 +20,17 @@ class HomeListView(ListView):
     ]
     template_name = 'home/list.html'
 
+
+# Usando un modelo de datos
+class HomeListTestView(ListView):
+    model = Home
+    context_object_name = 'data'
+    template_name = 'home/test_list.html'
+
+
+# Clase que permite crear un recurso
+class HomeCreateView(CreateView):
+    model = Home
+    template_name = 'home/add_home.html'
+    # Especifica campos que se podran recibir para crear
+    fields = ['titulo', 'subtitulo', 'cantidad']

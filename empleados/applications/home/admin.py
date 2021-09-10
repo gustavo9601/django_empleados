@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Home
 
-# Register your models here.
+# Añadiendo el modelo al administrador propio de django
+admin.site.register(Home)

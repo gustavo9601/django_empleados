@@ -1,0 +1,11 @@
+<p>
+    Data: {{ data }}
+</p>
+<p>
+    Cantidad registros: {{ data.count }}
+</p>
+<ul>
+    {% for registro_home in data %}
+        <li>{{ registro_home.titulo }} | {{ registro_home.subtitulo }} | {{ registro_home.cantidad }}</li>
+    {% endfor %}
+</ul>
