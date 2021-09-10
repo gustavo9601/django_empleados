@@ -5,3 +5,4 @@ __pycache__/
 *$py.class
 .env
 empleados/db.sqlite3
+empleados/empleados/db.sqlite3
