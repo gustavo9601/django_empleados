@@ -7,6 +7,7 @@ from .models import Persona, Habilidades
 class EmpleadoAdmin(admin.ModelAdmin):
     # Especificando que columnas mostrar en las tablas del dashbard
     list_display = (
+        'id',
         'first_name',
         'last_name',
         'job',
