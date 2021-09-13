@@ -20,6 +20,7 @@ class Persona(models.Model):
     """ Modelo para tabla empleado  """""
     first_name = models.CharField(verbose_name='Nombres', max_length=50)
     last_name = models.CharField(verbose_name='Apellidos', max_length=50)
+    nickname = models.CharField(verbose_name='Apodo generado automaticamente', max_length=100, blank=True, null=True)
 
     # Creando similar a un Enum y solo permita valores permitidos
     # En el admin se mostrara como una select html
