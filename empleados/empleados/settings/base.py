@@ -6,6 +6,7 @@ import sys
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR = Path(__file__).resolve().parent.parent
 from unipath import Path
+
 BASE_DIR = Path(__file__).ancestor(3)
 
 # Quick-start development settings - unsuitable for production
@@ -25,6 +26,7 @@ INSTALLED_APPS = [
 
     # Third apps
     'ckeditor',
+    'debug_toolbar',
 
     # Local Apps
     'applications.home',
@@ -40,6 +42,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Third apps,
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
 ROOT_URLCONF = 'empleados.urls'
@@ -100,3 +105,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+INTERNAL_IPS = ['127.0.0.1']
