@@ -107,3 +107,7 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 INTERNAL_IPS = ['127.0.0.1']
+
+# Degine la ruta archivos staticos del proyecto
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR.child('static')]

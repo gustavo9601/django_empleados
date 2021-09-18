@@ -1,13 +1,9 @@
-<!doctype html>
-<html lang="es_CO">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<h1>aaa</h1>
-</body>
-</html>
+{% extends 'home/common/base.html' %}
+{% block title %}Home{% endblock title %}
+
+
+{% block body %}
+    {% include 'home/common/header.html' %}
+    <h1>Body Home</h1>
+    {% include 'home/common/footer.html' %}
+{% endblock body %}
