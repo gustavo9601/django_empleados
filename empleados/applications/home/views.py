@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, CreateView
 
 from .models import Home
-
+from .forms import HomeForm
 
 # Create your views here.
 class HomeView(TemplateView):
@@ -33,4 +33,9 @@ class HomeCreateView(CreateView):
     model = Home
     template_name = 'home/add_home.html'
     # Especifica campos que se podran recibir para crear
-    fields = ['titulo', 'subtitulo', 'cantidad']
+    # fields = ['titulo', 'subtitulo', 'cantidad']
+
+    # Usando una clase para especificar la clase separando la responsabilidad
+    form_class = HomeForm
+    success_url = '/'
+

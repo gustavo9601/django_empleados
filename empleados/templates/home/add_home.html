@@ -1,3 +1,7 @@
 <h2>Crear home</h2>
 {% comment %}Accede directamente al formulario enviado de la clase CreateView{% endcomment %}
-{{ form }}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enviar</button>
+</form>
