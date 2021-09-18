@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Inicio Personas{% endblock title %}
+
+
+
+{% block body %}
+    {% comment %}Header{% endcomment %}
+    {% include 'includes/header.html' %}
+
+    {% comment %}Banner{% endcomment %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{% static 'img/bg-1.jpg' %}" class="d-block w-100">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    {% comment %}Bloque de bienvenid{% endcomment %}
+    <div class="row">
+        <div class="col-12 p-5">
+            <div class="text-center">
+                <h1>Bienvenido al sistema de ingreso de eprsonal</h1>
+                <p>Mensaje de bienvenida</p>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

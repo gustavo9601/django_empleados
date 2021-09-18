@@ -44,7 +44,7 @@ class ListAllPersonasByArea(ListView):
 
 class ListAllPersonasByKWord(ListView):
     """Lista de empleados por palabta clave"""
-    template_name = 'personas/by_kword.html'
+    template_name = 'personas/list_all.html'
     context_object_name = 'personas'
 
     def get_queryset(self):
@@ -133,3 +133,8 @@ class DeleteEmpleadoView(DeleteView):
     # Template que es usado para confirmar la eliminacion
     template_name = 'personas/delete.html'
     success_url = reverse_lazy(viewname='personas:success')
+
+
+class InitView(TemplateView):
+    """View load init page"""
+    template_name = 'personas/inicio.html'

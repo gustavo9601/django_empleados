@@ -1,8 +1,19 @@
-{{ persona }}
+{% extends 'base.html' %}
+{% block title %}{{ persona.first_name }}{% endblock title %}
 
-{% comment %}titulo // variable de contexto adicionada{% endcomment %}
-<h3>Todos los datos | {{ titulo }}</h3>
-<p>{{ persona.first_name }}</p>
-<p>{{ persona.last_name }}</p>
-<p>{{ persona.job }}</p>
-<p>{{ persona.habilities }}</p>
+{% block body %}
+    {% comment %}Header{% endcomment %}
+    {% include 'includes/header.html' %}
+
+    <div class="container">
+
+        {% comment %}titulo // variable de contexto adicionada{% endcomment %}
+        <h3>Todos los datos | {{ titulo }}</h3>
+        <p>{{ persona.first_name }}</p>
+        <p>{{ persona.last_name }}</p>
+        <p>{{ persona.job }}</p>
+        <p>{{ persona.habilities }}</p>
+
+        {{ persona }}
+    </div>
+{% endblock body %}
