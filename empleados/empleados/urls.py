@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from django.conf.urls.static import static
 
 from applications.departamento.urls import url_departameto
 from applications.home.urls import urls_home
@@ -16,7 +17,11 @@ urlpatterns = [
     # Persona
     path('', include(urls_personas))
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# // extiende las urls que se generan automaticamente espeficando la url de setting y la carpeta condetendora
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 # Adding the debug query in dashboard admin
 if settings.DEBUG:
